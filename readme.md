@@ -1,5 +1,6 @@
 Die Vorlage beinhaltet CSS/HTML/JS-Linter. Diese sind konfiguriert. 
 
+changed
 Getting Started
 1. Entzippen von der Vorlage.
 2. Installieren Sie die Dependencies der Vorlage
