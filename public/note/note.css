@@ -1,0 +1,56 @@
+:root {
+    --defaultGap: 15px;
+}
+
+html {
+    display: flex;
+    background-color: aqua;
+    max-width: 920px;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--defaultGap);
+    row-gap: var(--defaultGap);
+    margin-top: 50px;
+}
+
+.label {
+    grid-column: 1;
+}
+
+.input .button .textarea {
+    grid-column: 2;
+}
+
+.btnSave {
+    margin-top: var(--defaultGap);
+    width: 100%;
+}
+
+.btnCancel {
+    margin-left: auto;
+    margin-top: var(--defaultGap);
+}
+
+.icoImportance {
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+}
+
+.icoImportance:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+footer {
+    height: 50px;
+    background-color: tomato;
+}
