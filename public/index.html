@@ -13,12 +13,12 @@
 
 
 <body>
-
+    <div id="#root"></div>
 <header>
     <form>
         <div class="header-content">
             <div class="header-content-c11">
-                <button type="button" id="btnAddNote"> create new note</button>
+                <button type="button" id="btnAddNote"><a href="./note/index.html">create new note</a></button>
             </div>
 
             <div class="header-content-c12">
@@ -29,9 +29,9 @@
             </div>
 
             <div class="header-content-sort">
-                <button type="button" id="btnSort" value="finished">by finish Date</button>
-                <button type="button" id="btnSort" value="created">by creation Date</button>
-                <button type="button" id="btnSort" value="importance">by importance</button>
+                <button type="button" id="btnSortFinished" onclick="refreshNotes('finished')" value="finished">by finish Date</button>
+                <button type="button" id="btnSortCreated" value="created">by creation Date</button>
+                <button type="button" id="btnSortImportance" value="importance">by importance</button>
             </div>
 
             <div class="header-content-filter">
@@ -42,8 +42,8 @@
 </header>
 
 <main>
-    <div class="entries">
-        <label class="col1">nächsten Mittwoch</label>
+    <div id="entriesId">
+        <!-- <label class="col1">nächsten Mittwoch</label>
 
         <label class="col2">CAS FEE ...</label>
         <div class="col3">
@@ -59,8 +59,7 @@
         </div>
         <textarea
                 class="col2x">HTML fü rdi elkjsf laksjfd llaskjf lsfjlksafjl lsjalfkjsal kfj lskfj lksaj flsajfljsf l</textarea>
-        <button type="button" id="btnUpdate" class="col4">edit</button>
-        <a href="./note/index.html">.</a>
+        <button type="button" id="btnUpdate" class="col4">edit</button> -->
 
         <!--        <li>-->
         <!--            <label>{{dueDate}}</label>-->
@@ -74,7 +73,8 @@
 </main>
 
 <footer>
-    footer
+    footer        <a href="./note/index.html">zur Einzelansicht</a>
+
 </footer>
 </body>
 

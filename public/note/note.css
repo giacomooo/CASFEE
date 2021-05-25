@@ -13,6 +13,10 @@ body {
     margin: auto;
 }
 
+.formWrapper {
+    min-height: calc(100vh - 100px);
+}
+
 .formGrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
