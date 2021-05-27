@@ -4,21 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Note App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
-            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous" defer></script>
-    <script src="scripts/index.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" defer></script>
+    <script src="scripts/controllers/note-controller.js" type="module"></script>
 
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/notes.css">
+
+    <script id="notes-list-template" type="text/x-handlebars-template">
+        {{#each notes}}
+            <label class="col1">{{dueAt}}</label>
+
+            <label class="col2">{{title}}</label>
+            <div class="col3"> {{importance}}
+                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
+                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
+                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
+                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
+                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
+            </div>
+            <div class="col1">
+                <input type="checkbox" id="chk1" disabled {{#if isFinished}}checked>{{/if}}</input>
+                <label for="chk1">finished</label>{{#if finishedToday}}[Today]{{/if}}
+            </div>
+            <textarea
+                    class="col2x" disabled>{{description}}</textarea>
+            <button type="button" id="btnUpdate" class="col4" value="{{id}}" data-note-id="{{id}}">edit{{id}}</button>
+
+
+
+        {{/each}}
+        {{#unless notes.length}}
+            No Notes found.
+        {{/unless}}
+    </script>
+
 </head>
 
 
 <body>
-    <div id="#root"></div>
+<div id="#root"></div>
 <header>
     <form>
         <div class="header-content">
             <div class="header-content-c11">
-                <button type="button" id="btnAddNote"><a href="./note/index.html">create new note</a></button>
+                <button type="button" id="btnAddNote"><a href="./note.html">create new note</a></button>
             </div>
 
             <div class="header-content-c12">
@@ -29,7 +57,9 @@
             </div>
 
             <div class="header-content-sort">
-                <button type="button" id="btnSortFinished" onclick="refreshNotes('finished')" value="finished">by finish Date</button>
+                <button type="button" id="btnSortFinished" onclick="refreshNotes('finished')" value="finished">by finish
+                    Date
+                </button>
                 <button type="button" id="btnSortCreated" value="created">by creation Date</button>
                 <button type="button" id="btnSortImportance" value="importance">by importance</button>
             </div>
@@ -42,39 +72,43 @@
 </header>
 
 <main>
-    <div id="entriesId">
-        <!-- <label class="col1">nächsten Mittwoch</label>
+    <section class="entries" id="notes-container">
+    </section>
 
-        <label class="col2">CAS FEE ...</label>
-        <div class="col3">
-            <img src="../assets/lightning-200-1126117.png" class="icoImportance">
-            <img src="../assets/lightning-200-1126117.png" class="icoImportance">
-            <img src="../assets/lightning-200-1126117.png" class="icoImportance">
-            <img src="../assets/lightning-200-1126117.png" class="icoImportance">
-            <img src="../assets/lightning-200-1126117.png" class="icoImportance">
-        </div>
-        <div class="col1">
-            <input type="checkbox" id="chk1"></input>
-            <label for="chk1">[ Today ]</label>
-        </div>
-        <textarea
-                class="col2x">HTML fü rdi elkjsf laksjfd llaskjf lsfjlksafjl lsjalfkjsal kfj lskfj lksaj flsajfljsf l</textarea>
-        <button type="button" id="btnUpdate" class="col4">edit</button> -->
+    <!--    <div id="entriesId">-->
 
-        <!--        <li>-->
-        <!--            <label>{{dueDate}}</label>-->
-        <!--            <label>{{title}} </label>-->
-        <!--            <label>{{importance}}</label>-->
-        <!--            <label>{{isFinished}} </label>-->
-        <!--            <label>{{description}}</label>-->
-        <!--            <button type="button" id="btnUpdate">edit</button>-->
-        <!--        </li>-->
+
+    <!-- <label class="col1">nächsten Mittwoch</label>
+
+    <label class="col2">CAS FEE ...</label>
+    <div class="col3">
+        <img src="../assets/lightning-200-1126117.png" class="icoImportance">
+        <img src="../assets/lightning-200-1126117.png" class="icoImportance">
+        <img src="../assets/lightning-200-1126117.png" class="icoImportance">
+        <img src="../assets/lightning-200-1126117.png" class="icoImportance">
+        <img src="../assets/lightning-200-1126117.png" class="icoImportance">
     </div>
+    <div class="col1">
+        <input type="checkbox" id="chk1"></input>
+        <label for="chk1">[ Today ]</label>
+    </div>
+    <textarea
+            class="col2x">HTML fü rdi elkjsf laksjfd llaskjf lsfjlksafjl lsjalfkjsal kfj lskfj lksaj flsajfljsf l</textarea>
+    <button type="button" id="btnUpdate" class="col4">edit</button> -->
+
+    <!--        <li>-->
+    <!--            <label>{{dueDate}}</label>-->
+    <!--            <label>{{title}} </label>-->
+    <!--            <label>{{importance}}</label>-->
+    <!--            <label>{{isFinished}} </label>-->
+    <!--            <label>{{description}}</label>-->
+    <!--            <button type="button" id="btnUpdate">edit</button>-->
+    <!--        </li>-->
+    <!--    </div>-->
 </main>
 
 <footer>
-    footer        <a href="./note/index.html">zur Einzelansicht</a>
-
+    footer
 </footer>
 </body>
 

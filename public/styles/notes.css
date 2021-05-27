@@ -64,18 +64,20 @@ header {
     /* background-color: rgb(255, 0, 0); */
 }
 
+main {
+    background-color: lightgrey;
+}
+
 .entries {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-rows: min-content min-content;
     grid-gap: 10px;
-
-    /* background-color: aqua; */
 }
 
 .col1 {
     grid-column: 1 / span 1;
-
+min-height: 15px;
     /* background-color: chartreuse; */
 }
 
@@ -100,7 +102,7 @@ header {
 
 .col4 {
     grid-column: 4 / span 1;
-margin-bottom: 15px;
+    margin-bottom: 25px;
     /* background-color: cadetblue; */
 }
 
