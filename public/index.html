@@ -11,10 +11,10 @@
 
     <script id="notes-list-template" type="text/x-handlebars-template">
         {{#each notes}}
-            <label class="col1">{{dueAt}}</label>
+            <label class="col1" title="Erledigungsdatum">{{dueAt}}</label>
 
-            <label class="col2">{{title}}</label>
-            <div class="col3"> {{importance}}
+            <label class="col2" title="Titel">{{title}}</label>
+            <div class="col3" title="Wichtigkeit" disabled> {{importance}}
                 <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
                 <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
                 <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
@@ -22,14 +22,12 @@
                 <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
             </div>
             <div class="col1">
-                <input type="checkbox" id="chk1" disabled {{#if isFinished}}checked>{{/if}}</input>
-                <label for="chk1">finished</label>{{#if finishedToday}}[Today]{{/if}}
+                <input type="checkbox" id="cbo"  disabled {{#if isFinished}}checked>{{/if}}</input>
+                <label for="cbo" title="{{finishedAt}}">finished</label>{{#if finishedToday}}[Today]{{/if}}
             </div>
-            <textarea
-                    class="col2x" disabled>{{description}}</textarea>
-            <button type="button" id="btnUpdate" class="col4" value="{{id}}" data-note-id="{{id}}">edit{{id}}</button>
 
-
+            <textarea class="col2x" disabled title="Beschreibung">{{description}}</textarea>
+            <button type="button" id="btnUpdate" class="col4" value="{{id}}" data-note-id="{{id}}" title="Notiz-Nr:{{id}}">edit</button>
 
         {{/each}}
         {{#unless notes.length}}
@@ -57,11 +55,11 @@
             </div>
 
             <div class="header-content-sort">
-                <button type="button" id="btnSortFinished" onclick="refreshNotes('finished')" value="finished">by finish
+                <button type="button" id="btnSortFinished" data-field-id="finishedAt">by finish
                     Date
                 </button>
-                <button type="button" id="btnSortCreated" value="created">by creation Date</button>
-                <button type="button" id="btnSortImportance" value="importance">by importance</button>
+                <button type="button" id="btnSortCreated" data-field-id="createdAt">by creation Date</button>
+                <button type="button" id="btnSortImportance" data-field-id="importance">by importance</button>
             </div>
 
             <div class="header-content-filter">
@@ -72,7 +70,7 @@
 </header>
 
 <main>
-    <section class="entries" id="notes-container">
+    <section class="entries" id="notes-container" >
     </section>
 
     <!--    <div id="entriesId">-->
