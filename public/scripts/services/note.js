@@ -1,5 +1,5 @@
 export class Note {
-  constructor(id, dueAt, title, importance, finishedAt, description) {
+  constructor(id, dueAt, title, importance, finishedAt, description, createdAt) {
     this.id = id;
     this.dueAt = dueAt;
     this.title = title;
@@ -8,6 +8,7 @@ export class Note {
     this.description = description;
     this.isFinished = Boolean(this.finishedAt);
     this.finishedToday = this.isFinishedToday(finishedAt);
+    this.createdAt = createdAt;
   }
 
   isFinishedToday() {
@@ -25,6 +26,7 @@ export class Note {
       description: this.description,
       finishedToday: this.finishedToday,
       isFinished: this.isFinished,
+      createdAt: this.createdAt,
     };
   }
 }

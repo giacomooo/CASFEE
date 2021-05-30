@@ -1,9 +1,12 @@
 // import {moment} from '../../../node_modules/moment';
-import { noteService } from '../services/note-service.js';
+import {noteService} from '../services/note-service.js';
 
 const notesTemplateCompiled = Handlebars.compile(document.getElementById('notes-list-template').innerHTML);
 
 const notesContainer = document.getElementById('notes-container');
+const btnSortCreated = document.getElementById('btnSortCreated');
+const btnSortFinished = document.getElementById('btnSortFinished');
+const btnSortImportance = document.getElementById('btnSortImportance');
 
 function showNotes() {
   notesContainer.innerHTML = notesTemplateCompiled(
@@ -12,18 +15,35 @@ function showNotes() {
   );
 }
 
-function initEventHandlers() {
-  notesContainer.addEventListener('click', (event) => {
-    document.location.href = `../../note.html?id=${event.target.dataset.noteId}`;
-  });
-}
-
 function refreshNotesView() {
   showNotes();
 }
 
+function sort(fieldId) {
+  noteService.sort(fieldId);
+  refreshNotesView();
+}
+
+function initEventHandlers() {
+  notesContainer.addEventListener('click', (event) => {
+    document.location.href = `../../note.html?id=${event.target.dataset.noteId}`;
+  });
+
+  btnSortCreated.addEventListener('click', (event) => {
+    sort(event.target.dataset.fieldId);
+  });
+
+  btnSortFinished.addEventListener('click', (event) => {
+    sort(event.target.dataset.fieldId);
+  });
+
+  btnSortImportance.addEventListener('click', (event) => {
+    sort(event.target.dataset.fieldId);
+  });
+}
+
 function initialize() {
-   // console.log('init notesService', moment().format('YYYY-mm-dd'));
+  // console.log('init notesService', moment().format('YYYY-mm-dd'));
   // const dateStr = new Date().toDateString();
   // console.log(Math.abs(new Date() - new Date(dateStr.replace(/-/g, '/'))));
   initEventHandlers();
