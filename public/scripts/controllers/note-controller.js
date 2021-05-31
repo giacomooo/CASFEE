@@ -7,6 +7,7 @@ const notesContainer = document.getElementById('notes-container');
 const btnSortCreated = document.getElementById('btnSortCreated');
 const btnSortFinished = document.getElementById('btnSortFinished');
 const btnSortImportance = document.getElementById('btnSortImportance');
+const btnTheme = document.getElementById('btnTheme');
 
 function showNotes() {
   notesContainer.innerHTML = notesTemplateCompiled(
@@ -24,6 +25,7 @@ function sort(fieldId) {
   refreshNotesView();
 }
 
+
 function initEventHandlers() {
   notesContainer.addEventListener('click', (event) => {
     document.location.href = `../../note.html?id=${event.target.dataset.noteId}`;
@@ -39,6 +41,11 @@ function initEventHandlers() {
 
   btnSortImportance.addEventListener('click', (event) => {
     sort(event.target.dataset.fieldId);
+  });
+
+  btnTheme.addEventListener('change', (event) => {
+    document.body.className = '';
+    document.body.classList.add(event.target.value);
   });
 }
 

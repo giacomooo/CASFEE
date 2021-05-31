@@ -14,7 +14,12 @@
 
 .original-theme {
     --background: white;
-    --color: #222;
+    --color: #666;
+}
+
+.summer-theme {
+    --background: #c6c622;
+    --color: #739d9d;
 }
 
 html {
