@@ -2,6 +2,8 @@ import {Note} from './note.js';
 
 export class NoteService {
   constructor() {
+    this.direction = -1;
+    this.sortField = '';
     this.notes = [];
   }
 
@@ -23,13 +25,19 @@ export class NoteService {
   }
 
   sort(field) {
+    if (field === this.sortField) {
+      this.direction *= -1;
+    }
+
+    this.sortField = field;
+
     this.notes.sort((a, b) => {
       if (a[field] < b[field]) {
-        return -1;
+        return -1 * this.direction;
       }
 
       if (a[field] > b[field]) {
-        return 1;
+        return this.direction;
       }
       return 0;
     });
