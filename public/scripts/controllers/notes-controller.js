@@ -62,7 +62,7 @@ function initEventHandlers() {
 }
 
 function initialize() {
-  // console.log('init notesService', moment().format('YYYY-mm-dd'));
+   // console.log('init notesService', moment().format('YYYY-mm-dd'));
   // const dateStr = new Date().toDateString();
   // console.log(Math.abs(new Date() - new Date(dateStr.replace(/-/g, '/'))));
   initEventHandlers();
