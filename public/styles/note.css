@@ -2,17 +2,6 @@
     --defaultGap: 15px;
 }
 
-html {
-    display: flex;
-    background-color: aqua;
-    max-width: 920px;
-}
-
-body {
-    width: 80%;
-    margin: auto;
-}
-
 .formWrapper {
     min-height: calc(100vh - 100px);
 }
@@ -52,9 +41,4 @@ body {
 .icoImportance:hover {
     cursor: pointer;
     background-color: lightgrey;
-}
-
-footer {
-    height: 50px;
-    background-color: tomato;
 }

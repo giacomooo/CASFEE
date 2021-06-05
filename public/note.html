@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Note Pro</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
-        integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous" defer></script>
-    <script src="./controller.js" type="module"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"-->
+<!--        integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous" defer></script>-->
+<!--    <script src="./controller.js" type="module"></script>-->
+
+    <script src="scripts/controllers/note-controller.js" type="module"></script>
 
     <link rel="stylesheet" href="styles/note.css">
+    <link rel="stylesheet" href="styles/notes.css">
 </head>
 
 
@@ -24,7 +27,7 @@
                     <label for="#title">Titel</label>
                     <input id="#title" type="text">
                     <label for="#description">Beschreibung</label>
-                    <textarea id="#description"> </textarea>
+                    <textarea id="#description" rows="4"> </textarea>
                     <label for="#importance">Wichtigkeit</label>
                     <div class="input">
                         <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
@@ -41,7 +44,7 @@
                     <label for="#dueAt">Erledigt bis:</label>
                     <input id="#dueAt" type="date">
                 </div>
-                <button class="btnSave" type="button">Speichern</button>
+                <button class="btnSave" id="btnSave" type="button">Speichern</button>
                 <button class="btnCancel" type="reset"><a href="./index.html">Cancel</a></button>
             </form>
         </div>
