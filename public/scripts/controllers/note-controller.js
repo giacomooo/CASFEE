@@ -3,7 +3,6 @@ import {noteService} from '../services/note-service.js';
 const btnSave = document.getElementById('btnSave');
 
 function refreshNoteView(note) {
-  console.log('refresh', note);
   document.getElementById('#title').value = note.title;
   document.getElementById('#description').value = note.description;
   document.getElementById('#importance').value = note.importance;
@@ -11,8 +10,8 @@ function refreshNoteView(note) {
 }
 
 function initEventHandlers() {
-  btnSave.addEventListener('click', (event) => {
-    console.log('save Clicked', event);
+  btnSave.addEventListener('click', () => {
+    document.location.href = `${window.location.origin}/index.html`;
   });
 }
 
