@@ -8,6 +8,7 @@ const btnSortCreated = document.getElementById('btnSortCreated');
 const btnSortFinished = document.getElementById('btnSortFinished');
 const btnSortImportance = document.getElementById('btnSortImportance');
 const btnTheme = document.getElementById('btnTheme');
+const btnShowFinished = document.getElementById('btnShowFinished');
 
 function showNotes() {
   notesContainer.innerHTML = notesTemplateCompiled(
@@ -25,6 +26,10 @@ function sort(fieldId) {
   refreshNotesView();
 }
 
+function filter() {
+  noteService.filter();
+  refreshNotesView();
+}
 
 function initEventHandlers() {
   notesContainer.addEventListener('click', (event) => {
@@ -46,6 +51,10 @@ function initEventHandlers() {
   btnTheme.addEventListener('change', (event) => {
     document.body.className = '';
     document.body.classList.add(event.target.value);
+  });
+
+  btnShowFinished.addEventListener('click',(event) => {
+    filter();
   });
 }
 
