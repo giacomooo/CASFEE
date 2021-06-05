@@ -55,8 +55,6 @@ header {
 
 .header-content-c12 {
     justify-self: end;
-
-    /* background-color: olive; */
 }
 
 .header-content-sort {
@@ -65,12 +63,6 @@ header {
 
 .header-content-filter {
     justify-self: end;
-
-    /* background-color: rgb(255, 0, 0); */
-}
-
-main {
-    background-color: rgb(230 232 228 / 14%);
 }
 
 .entries {
@@ -83,7 +75,6 @@ main {
 .col1 {
     grid-column: 1 / span 1;
     min-height: 15px;
-    /* background-color: chartreuse; */
 }
 
 .col2x {
@@ -96,25 +87,21 @@ main {
 
 .col2 {
     grid-column: 2 / span 1;
-    /* background-color: hotpink; */
 }
 
 .col3 {
     grid-column: 3 / span 1;
-
-    /* background-color: cadetblue; */
 }
 
 .col4 {
     grid-column: 4 / span 1;
     margin-bottom: 25px;
-    /* background-color: cadetblue; */
 }
 
 main {
     flex: 1 0 100%;
-    min-height: calc(100vh - 120px)
-    /* background-color: rgba(176, 231, 203, 0.877); */
+    background-color: rgb(230 232 228 / 14%);
+    min-height: calc(100vh - 120px);
 }
 
 a {
@@ -132,7 +119,6 @@ button,
 select {
     cursor: pointer;
 }
-
 
 .icoImportance {
     background-color: transparent;

@@ -1,4 +1,3 @@
-// import {moment} from '../../../node_modules/moment';
 import {noteService} from '../services/note-service.js';
 
 const notesTemplateCompiled = Handlebars.compile(document.getElementById('notes-list-template').innerHTML);
@@ -32,9 +31,9 @@ function filter() {
 }
 
 function initEventHandlers() {
-  notesContainer.addEventListener('click', (event) => {
-    document.location.href = `../../note.html?id=${event.target.dataset.noteId}`;
-  });
+  function btnEditFunc(element) {
+    document.location.href = `${window.location.origin}/note.html?id=${element.dataset.noteId}`;
+  }
 
   btnSortCreated.addEventListener('click', (event) => {
     sort(event.target.dataset.fieldId);
@@ -53,8 +52,12 @@ function initEventHandlers() {
     document.body.classList.add(event.target.value);
   });
 
-  btnShowFinished.addEventListener('click',(event) => {
+  btnShowFinished.addEventListener('click', () => {
     filter();
+  });
+
+  notesContainer.addEventListener('click', (event) => {
+    btnEditFunc(event.target);
   });
 }
 
