@@ -31,8 +31,10 @@ function filter() {
 }
 
 function initEventHandlers() {
-  function btnEditFunc(element) {
+  async function btnEditFunc(element) {
+//    await noteService.getNote(element.dataset.noteId).then(()=>{});
     document.location.href = `${window.location.origin}/note.html?id=${element.dataset.noteId}`;
+
   }
 
   btnSortCreated.addEventListener('click', (event) => {
@@ -61,13 +63,14 @@ function initEventHandlers() {
   });
 }
 
-function initialize() {
-   // console.log('init notesService', moment().format('YYYY-mm-dd'));
-  // const dateStr = new Date().toDateString();
-  // console.log(Math.abs(new Date() - new Date(dateStr.replace(/-/g, '/'))));
+async function initialize() {
   initEventHandlers();
-  noteService.loadData();
+
+  await noteService.loadData()
+                   .then((x) => {
+                   });
+
   refreshNotesView();
 }
 
-initialize();
+await initialize();

@@ -11,42 +11,54 @@
 
 <body>
 
-    <header>
-    </header>
+<header>
+</header>
 
-    <main>
-        <div class="formWrapper">
-            <form>
-                <div class="formGrid">
-                    <label for="#title">Titel</label>
-                    <input id="#title" type="text">
-                    <label for="#description">Beschreibung</label>
-                    <textarea id="#description" rows="4"> </textarea>
-                    <label for="#importance">Wichtigkeit</label>
-                    <div class="input">
-                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
-                               alt="Importance5">
-                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
-                               alt="Importance4">
-                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
-                               alt="Importance3">
-                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
-                               alt="Importance2">
-                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"
-                               alt="Importance1">
-                    </div>
-                    <label for="#dueAt">Erledigt bis:</label>
-                    <input id="#dueAt" type="date">
-                </div>
-                <button class="btnSave" id="btnSave" type="button">Speichern</button>
-                <button class="btnCancel" type="reset"><a href="./index.html">Cancel</a></button>
-            </form>
-        </div>
-    </main>
+<main>
+    <div class="formWrapper">
+        <form>
+            <div class="formGrid">
+                <label for="#title">Titel</label>
+                <input id="#title" type="text">
+                <label for="#description">Beschreibung</label>
+                <textarea id="#description" rows="4"> </textarea>
 
-    <footer>
-        footer
-    </footer>
+                <label>Wichtigkeit
+                    <label>1<input type="radio" id="#importance" name="importance" value="1"></label>
+                    <label>2<input type="radio" name="importance" value="2"></label>
+                    <label>3<input type="radio" name="importance" value="3"></label>
+                    <label>4<input type="radio" name="importance" value="4"></label>
+                    <label>5<input type="radio" name="importance" value="5"></label>
+                </label>
+
+                <!--                    <label for="#importance">Wichtigkeit</label>-->
+                <!--                    <input id="#importance" type="radio">-->
+                <!--                    <option value="1">-->
+                <!--                    </option>-->
+                <!--                    <div class="input">-->
+                <!--                                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"-->
+                <!--                                               alt="Importance5" value="5">-->
+                <!--                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"-->
+                <!--                               alt="Importance4">-->
+                <!--                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"-->
+                <!--                               alt="Importance3">-->
+                <!--                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"-->
+                <!--                               alt="Importance2">-->
+                <!--                        <input type="image" src="assets/lightning-200-1126117.png" class="icoImportance"-->
+                <!--                               alt="Importance1">-->
+                <!--                    </div>-->
+                <label for="#dueAt">Erledigt bis:</label>
+                <input id="#dueAt" type="date">
+            </div>
+            <button class="btnSave" id="btnSave" type="button">Speichern</button>
+            <button class="btnCancel" type="reset"><a href="./index.html">Cancel</a></button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    footer
+</footer>
 </body>
 
 </html>
