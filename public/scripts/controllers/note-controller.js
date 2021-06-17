@@ -11,17 +11,35 @@ function refreshNoteView(note) {
 
 function initEventHandlers() {
   btnSave.addEventListener('click', () => {
-    document.location.href = `${window.location.origin}/index.html`;
+    noteService.createNote(9, document.getElementById('#title').value,
+        document.getElementById('#description').value,
+        document.getElementById('#dueAt').value,
+        document.getElementById('#importance').value)
+               .then((res) => {
+                 res.ok ? res.json() : console.log('createNotePromise', res.json());
+               })
+               .catch(console.log);
+    // document.location.href = `${window.location.origin}/index.html`;
+    console.warn('todo: redirect to übersicht');
   });
 }
 
-function initialize() {
+async function initialize() {
   initEventHandlers();
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const note = noteService.getNote(urlParams.get('id'));
-  refreshNoteView(note);
+  const id = urlParams.get('id');
+  if (!id) return;
+  const note = await noteService.getNote(id)
+                                .then((res) => {
+                                  res.join();
+                                });
+  console.log('note-controller35', id, note);
+  await refreshNoteView(note)
+  .then((res) => {
+    res.join();
+  });
 }
 
-initialize();
+await initialize();
