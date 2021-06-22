@@ -1,3 +1,4 @@
+/* eslint-disable */
 //! moment.js
 //! version : 2.29.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -5668,3 +5669,4 @@
   return hooks;
 
 })));
+/* eslint-enable */

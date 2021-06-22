@@ -5,7 +5,7 @@ export default class NoteStore {
   constructor(db) {
     this.db = db || new Datastore({
       filename: './source/data/notes.db',
-      autoload: true
+      autoload: true,
     });
   }
 
@@ -16,27 +16,23 @@ export default class NoteStore {
 
   async add(id, title, description, dueDate, importance) {
     const note = new Note(id, title, description, dueDate, importance);
-    console.log('add', note);
     return await this.db.insert(note);
   }
 
   async mod(id, title, description, dueDate, importance) {
-    const note = new Note(id, title, description, dueDate, importance);
-    console.log('mod', note);
     return await this.db.update({_id: id},
         {
           $set: {
-            title: title,
-            description: description,
-            dueDate: dueDate,
-            importance: importance
-          }
+            title,
+            description,
+            dueDate,
+            importance,
+          },
         });
   }
 
   async get(_id) {
-    const note = await this.db.findOne({_id: _id});
-    console.log('store get:', note);
+    const note = await this.db.findOne({_id});
     note.id = _id;
     return note;
   }

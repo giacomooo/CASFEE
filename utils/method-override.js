@@ -1,3 +1,4 @@
+/* eslint-disable */
 import override from 'method-override';
 
 export const overrideMiddleware = override(function (req, res) {
@@ -7,3 +8,4 @@ export const overrideMiddleware = override(function (req, res) {
     return method;
   }
 });
+/* eslint-enable */

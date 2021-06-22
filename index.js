@@ -14,7 +14,7 @@ app.use(overrideMiddleware);
 app.use('/notes', noteRoutes);
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.use((req, res, next) => {
+app.use((req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.send(404, 'Confound it all!  We could not find ye\'s page! ');
 });
@@ -26,5 +26,5 @@ app.get('/', (req, res) => {
 const hostname = '127.0.0.1';
 const port = 3000;
 app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server running at http://${hostname}:${port}/`);  // eslint-disable-line
 });

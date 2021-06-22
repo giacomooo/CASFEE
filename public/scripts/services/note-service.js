@@ -15,8 +15,7 @@ export default class NoteService {
   }
 
   async saveNote(id, title, description, dueDate, importance) {
-    console.log('save', id);
-    if (id == '') {
+    if (id === '') {
       await this.createNote(title, description, dueDate, importance);
       return;
     }
@@ -28,19 +27,18 @@ export default class NoteService {
       title,
       description,
       dueDate,
-      importance
+      importance,
     });
     return response;
   }
 
   async updateNote(id, title, description, dueDate, importance) {
-    console.log('client update', id);
     const response = await httpService.ajax('PUT', '/notes', {
       id,
       title,
       description,
       dueDate,
-      importance
+      importance,
     });
     return response;
   }
