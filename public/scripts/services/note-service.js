@@ -14,21 +14,39 @@ export default class NoteService {
     return response;
   }
 
-  async createNote(id, title, description, dueAt, importance) {
+  async saveNote(id, title, description, dueDate, importance) {
+    console.log('save', id);
+    if (id == '') {
+      await this.createNote(title, description, dueDate, importance);
+      return;
+    }
+    await this.updateNote(id, title, description, dueDate, importance);
+  }
+
+  async createNote(title, description, dueDate, importance) {
     const response = await httpService.ajax('POST', '/notes', {
+      title,
+      description,
+      dueDate,
+      importance
+    });
+    return response;
+  }
+
+  async updateNote(id, title, description, dueDate, importance) {
+    console.log('client update', id);
+    const response = await httpService.ajax('PUT', '/notes', {
       id,
       title,
       description,
-      dueAt,
+      dueDate,
       importance
     });
     return response;
   }
 
   async getNote(id) {
-    console.log('getno23', id);
-    const response = await httpService.ajax('GET', 'notes/{id}');
-    console.log('getNote25', response);
+    const response = await httpService.ajax('GET', `notes/${id}`);
     return response;
   }
 

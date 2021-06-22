@@ -2,7 +2,8 @@ import {noteStore} from '../services/noteStore.js';
 
 export class NotesController {
   async createNote(req, res) {
-    res.json(await noteStore.add(req.body.title, req.body.description, req.body.dueDate,
+    console.log('server_createNote', req.body);
+    res.json(await noteStore.add(req.body.id, req.body.title, req.body.description, req.body.dueDate,
         req.body.importance));
   }
 
@@ -11,8 +12,13 @@ export class NotesController {
   }
 
   async getNoteById(req, res) {
-    console.log('controller-server', req.params['idx'], req.params.idx, req.query);
-    res.json(await noteStore.get('VqA9w7YLeW3WClr2'));
+    res.json(await noteStore.get(req.params['id']));
+  }
+
+  async updateNote(req, res) {
+    console.log('updateNote', req.body);
+    res.json(await noteStore.mod(req.body.id, req.body.title, req.body.description, req.body.dueDate,
+        req.body.importance));
   }
 }
 
