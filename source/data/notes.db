@@ -1,4 +1,4 @@
-{"title":"Titela","description":"descriptiona","dueDate":"","createdDate":{"$$date":1624201292208},"importance":"2","done":false,"_id":"36qOCLwAm6jgDI32"}
+{"title":"Titela","description":"descriptionaaaaaaaaaaaaaaaaaaaaaaaaa","dueDate":"","createdDate":{"$$date":1624201292208},"importance":"4","done":false,"_id":"36qOCLwAm6jgDI32"}
 {"title":"azrzaz","description":" zaezazzaasfddsfdsf","dueDate":"","createdDate":{"$$date":1624395940789},"done":false,"_id":"6180J2AjbIy1j3k5"}
 {"title":"tt","description":" ff","dueDate":null,"createdDate":{"$$date":1624396598358},"done":false,"_id":"CtIavcQZwzZlwvx2"}
 {"title":"Book a Flight","description":"do it! ","dueDate":"2021-06-01","createdDate":{"$$date":1624204650770},"importance":"5","done":false,"_id":"QfvzvjXYq0dGdgP8"}
@@ -8,4 +8,4 @@
 {"title":"check everything","description":"check check doublecheck ","dueDate":{"$$date":1625097600000},"createdDate":{"$$date":1624210230454},"importance":"2","done":false,"_id":"m0vWEkS3BZJR5tzN"}
 {"title":"Hide","description":"now you see me ","dueDate":{"$$date":1625097600000},"createdDate":{"$$date":1624390933547},"importance":"4","done":false,"_id":"m2q7EEhCZg2UAM3K"}
 {"title":"Find Nemo","description":"search the ocean ","dueDate":null,"createdDate":{"$$date":1624201417779},"importance":"1","done":false,"_id":"nR4ezIlrcb2wJigb"}
-{"id":"Book a Flight","title":"do it! ","description":"2021-06-01","dueDate":"2001-04-01","createdDate":{"$$date":1624212107983},"done":false,"_id":"oj14UcCRskqCy1Dz","importance":"5"}
+{"id":"Book a Flight","title":"do it! ","description":"2021-06-01","dueDate":"2001-04-01","createdDate":{"$$date":1624212107983},"done":true,"_id":"oj14UcCRskqCy1Dz","importance":"5"}
