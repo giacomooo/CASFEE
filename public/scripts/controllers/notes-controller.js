@@ -25,16 +25,14 @@ function sort(fieldId) {
   refreshNotesView();
 }
 
-function filter() {
-  noteService.filter();
+async function filter() {
+  await noteService.filter();
   refreshNotesView();
 }
 
 function initEventHandlers() {
   async function btnEditFunc(element) {
-//    await noteService.getNote(element.dataset.noteId).then(()=>{});
     document.location.href = `${window.location.origin}/note.html?id=${element.dataset.noteId}`;
-
   }
 
   btnSortCreated.addEventListener('click', (event) => {

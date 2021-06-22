@@ -14,7 +14,8 @@ export class Note {
   isFinishedToday() {
     const inputDate = new Date(this.finishedAt);
     const todaysDate = new Date();
-    return inputDate.setHours(0, 0, 0, 0) === todaysDate.setHours(0, 0, 0, 0);
+    return inputDate.setHours(0, 0, 0, 0) ===
+        todaysDate.setHours(0, 0, 0, 0);
   }
 
   toJSON() {

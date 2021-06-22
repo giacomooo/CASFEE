@@ -15,11 +15,6 @@
 
             <label class="col2" title="Titel">{{title}}</label>
             <div class="col3" title="Wichtigkeit" disabled> {{importance}}
-                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
-                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
-                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
-                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
-                <!--                <img src="../assets/lightning-200-1126117.png" class="icoImportance">-->
             </div>
             <div class="col1">
                 <input type="checkbox" id="cbo"  disabled {{#if isFinished}}checked>{{/if}}</input>
@@ -61,7 +56,7 @@
                 <button type="button" id="btnSortFinished" data-field-id="finishedAt">by finish
                     Date
                 </button>
-                <button type="button" id="btnSortCreated" data-field-id="createdAt">by creation Date</button>
+                <button type="button" id="btnSortCreated" data-field-id="createdDate">by creation Date</button>
                 <button type="button" id="btnSortImportance" data-field-id="importance">by importance</button>
             </div>
 
