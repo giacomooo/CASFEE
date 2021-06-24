@@ -22,8 +22,12 @@
             </div>
 
             <textarea class="col2x" disabled title="Beschreibung">{{description}}</textarea>
-            <a href="./note.html?id={{_id}}" >
-            <button type="button" id="btnEdit" class="col4" title="Notiz-Nr:{{_id}}">edit</button></a>
+            <div>
+                <a href="./note.html?id={{_id}}" >
+                <button type="button" id="btnEdit" class="col4" title="Notiz-Nr:{{_id}}">edit</button>
+                </a>
+                <button type="button" id="btnDelete" class="col4" title="Notiz-Nr:{{_id}}">delete</button>
+            </div>
         {{/each}}
         {{#unless notes.length}}
             No Notes found.

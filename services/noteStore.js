@@ -36,6 +36,11 @@ export default class NoteStore {
     note.id = _id;
     return note;
   }
+
+  async delete(_id) {
+    await this.db.delete({_id});
+    return 'deleted';
+  }
 }
 
 export const noteStore = new NoteStore();

@@ -30,6 +30,10 @@ export class NotesController {
         req.body.completionDate,
     ));
   }
+
+  async deleteNote(req, res) {
+    await noteStore.delete(req.body.id);
+  }
 }
 
 export const notesController = new NotesController();

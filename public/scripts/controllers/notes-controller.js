@@ -8,6 +8,7 @@ const btnSortFinished = document.getElementById('btnSortFinished');
 const btnSortImportance = document.getElementById('btnSortImportance');
 const btnTheme = document.getElementById('btnTheme');
 const btnShowFinished = document.getElementById('btnShowFinished');
+const btnDelete = document.getElementById('btnDelete');
 
 function showNotes() {
   notesContainer.innerHTML = notesTemplateCompiled(
@@ -29,6 +30,7 @@ async function filter() {
   await noteService.filter();
   refreshNotesView();
 }
+
 
 function initEventHandlers() {
   async function btnEditFunc(element) {
@@ -55,13 +57,19 @@ function initEventHandlers() {
   btnShowFinished.addEventListener('click', () => {
     filter();
   });
+
+  // Buttons werden zu spät gerendert todo: delete fertigstellen
+  // btnDelete.addEventListener('click', (e) => {
+  //   console.log("ddddd", e)
+  // //   const x = noteService.deleteNote(e.id);
+  // });
 }
 
 async function initialize() {
   initEventHandlers();
 
   await noteService.loadData()
-                   .then((x) => {
+                   .then(() => {
                    });
 
   refreshNotesView();
