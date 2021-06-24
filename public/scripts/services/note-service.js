@@ -14,31 +14,33 @@ export default class NoteService {
     return response;
   }
 
-  async saveNote(id, title, description, dueDate, importance) {
+  async saveNote(id, title, description, dueDate, importance, completionDate) {
     if (id === '') {
-      await this.createNote(title, description, dueDate, importance);
+      await this.createNote(title, description, dueDate, importance, completionDate);
       return;
     }
-    await this.updateNote(id, title, description, dueDate, importance);
+    await this.updateNote(id, title, description, dueDate, importance, completionDate);
   }
 
-  async createNote(title, description, dueDate, importance) {
+  async createNote(title, description, dueDate, importance, completionDate) {
     const response = await httpService.ajax('POST', '/notes', {
       title,
       description,
       dueDate,
       importance,
+      completionDate,
     });
     return response;
   }
 
-  async updateNote(id, title, description, dueDate, importance) {
+  async updateNote(id, title, description, dueDate, importance, completionDate) {
     const response = await httpService.ajax('PUT', '/notes', {
       id,
       title,
       description,
       dueDate,
       importance,
+      completionDate,
     });
     return response;
   }
@@ -51,7 +53,7 @@ export default class NoteService {
   async filter() {
     this.isFilterSet = !this.isFilterSet;
     console.log(this.isFilterSet);
-    this.notes = this.isFilterSet ? this.notes.filter((n) => n.done == this.isFilterSet) :
+    this.notes = this.isFilterSet ? this.notes.filter((n) => n.done === this.isFilterSet) :
         await this.loadData();
   }
 
