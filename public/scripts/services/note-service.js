@@ -50,15 +50,18 @@ export default class NoteService {
     return response;
   }
 
+  async deleteNote(id) {
+    const response = await httpService.ajax('DELETE', `notes/${id}`);
+    return response;
+  }
+
   async filter() {
     this.isFilterSet = !this.isFilterSet;
-    console.log(this.isFilterSet);
     this.notes = this.isFilterSet ? this.notes.filter((n) => n.done === this.isFilterSet) :
         await this.loadData();
   }
 
   sort(field) {
-    console.log('sort', field);
     if (field === this.sortField) {
       this.direction *= -1;
     }
