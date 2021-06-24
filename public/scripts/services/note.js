@@ -1,18 +1,18 @@
 export class Note {
-  constructor(id, dueDate, title, importance, finishedAt, description, createdAt) {
+  constructor(id, dueDate, title, importance, completionDate, description, createdAt) {
     this.id = id;
     this.dueDate = dueDate;
     this.title = title;
     this.importance = importance;
-    this.finishedAt = finishedAt;
+    this.completionDate = completionDate;
     this.description = description;
-    this.isFinished = Boolean(this.finishedAt);
-    this.finishedToday = this.isFinishedToday(finishedAt);
+    this.isFinished = Boolean(this.completionDate);
+    this.finishedToday = this.isFinishedToday(completionDate);
     this.createdAt = createdAt;
   }
 
-  isFinishedToday() {
-    const inputDate = new Date(this.finishedAt);
+  isFinishedToday(completionDate) {
+    const inputDate = new Date(completionDate);
     const todaysDate = new Date();
     return inputDate.setHours(0, 0, 0, 0) ===
         todaysDate.setHours(0, 0, 0, 0);
@@ -28,6 +28,7 @@ export class Note {
       finishedToday: this.finishedToday,
       isFinished: this.isFinished,
       createdAt: this.createdAt,
+      completionDate: this.completionDate,
     };
   }
 }

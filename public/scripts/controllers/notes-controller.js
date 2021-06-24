@@ -55,10 +55,6 @@ function initEventHandlers() {
   btnShowFinished.addEventListener('click', () => {
     filter();
   });
-
-  notesContainer.addEventListener('click', (event) => {
-    btnEditFunc(event.target);
-  });
 }
 
 async function initialize() {

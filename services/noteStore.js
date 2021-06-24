@@ -10,16 +10,15 @@ export default class NoteStore {
   }
 
   async all() {
-    const notes = await this.db.find({});
-    return notes;
+    return await this.db.find({});
   }
 
-  async add(id, title, description, dueDate, importance) {
-    const note = new Note(id, title, description, dueDate, importance);
+  async add(id, title, description, dueDate, importance, completionDate) {
+    const note = new Note(id, title, description, dueDate, importance, completionDate);
     return await this.db.insert(note);
   }
 
-  async mod(id, title, description, dueDate, importance) {
+  async mod(id, title, description, dueDate, importance, completionDate) {
     return await this.db.update({_id: id},
         {
           $set: {
@@ -27,6 +26,7 @@ export default class NoteStore {
             description,
             dueDate,
             importance,
+            completionDate,
           },
         });
   }

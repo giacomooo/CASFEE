@@ -20,11 +20,13 @@ function refreshNoteView(note) {
   document.getElementById('#description').value = note.description;
   if (note.importance != null) document.getElementById(`#importance${note.importance}`).checked = true;
   document.getElementById('#dueDate').value = format(note.dueDate);
+  document.getElementById('#completionDate').value = format(note.completionDate);
   return note;
 }
 
 function initEventHandlers() {
   btnSave.addEventListener('click', () => {
+
     const importance = document.querySelector('input[name="importance"]:checked');
 
     noteService.saveNote(
@@ -32,7 +34,8 @@ function initEventHandlers() {
         document.getElementById('#title').value,
         document.getElementById('#description').value,
         document.getElementById('#dueDate').value,
-        importance?.value)
+        importance?.value,
+        document.getElementById('#completionDate').value)
                .then((res) => {
                  return res;
                });

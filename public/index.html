@@ -17,15 +17,13 @@
             <div class="col3" title="Wichtigkeit" disabled> {{importance}}
             </div>
             <div class="col1">
-                <input type="checkbox" id="cbo"  disabled {{#if isFinished}}checked>{{/if}}</input>
+            <input type="checkbox" id="cbo" disabled {{#if isFinished}}checked>{{/if}}
                 <label for="cbo" title="{{finishedAt}}">finished</label>{{#if finishedToday}}[Today]{{/if}}
             </div>
 
             <textarea class="col2x" disabled title="Beschreibung">{{description}}</textarea>
-            <button type="button" id="btnEdit" class="col4" value="{{_id}}" data-note-id="{{_id}}"
-                    title="Notiz-Nr:{{_id}}" onClick="">edit
-            </button>
-
+            <a href="./note.html?id={{_id}}" >
+            <button type="button" id="btnEdit" class="col4" title="Notiz-Nr:{{_id}}">edit</button></a>
         {{/each}}
         {{#unless notes.length}}
             No Notes found.

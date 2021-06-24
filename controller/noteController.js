@@ -8,6 +8,7 @@ export class NotesController {
         req.body.description,
         req.body.dueDate,
         req.body.importance,
+        req.body.completionDate,
     ));
   }
 
@@ -26,6 +27,7 @@ export class NotesController {
         req.body.description,
         req.body.dueDate,
         req.body.importance,
+        req.body.completionDate,
     ));
   }
 }
