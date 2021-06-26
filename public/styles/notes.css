@@ -49,16 +49,8 @@ header {
     margin: 0 0 15px;
 }
 
-.header-content-c11 {
-    /* background-color: hotpink; */
-}
-
 .header-content-c12 {
     justify-self: end;
-}
-
-.header-content-sort {
-    /* background-color: yellow; */
 }
 
 .header-content-filter {
@@ -106,6 +98,14 @@ main {
 
 a {
     text-decoration: none;
+}
+
+.active_button {
+    border-color: #222;
+}
+
+textarea {
+    resize: none;
 }
 
 footer {

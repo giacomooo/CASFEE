@@ -12,7 +12,6 @@ const btnShowFinished = document.getElementById('btnShowFinished');
 // const btnDelete = document.getElementById('btnDelete');
 
 function refreshNotesView() {
-  console.log('ref', noteService.notes);
   notesContainer.innerHTML = notesTemplateCompiled(
       {notes: noteService.notes},
       {allowProtoPropertiesByDefault: true},
@@ -32,14 +31,23 @@ async function filter() {
 function initEventHandlers() {
 
   btnSortCreated.addEventListener('click', (event) => {
+    btnSortFinished.className = '';
+    btnSortImportance.className = '';
+    btnSortCreated.classList.add('active_button');
     sort(event.target.dataset.fieldId);
   });
 
   btnSortFinished.addEventListener('click', (event) => {
+    btnSortFinished.classList.add('active_button');
+    btnSortImportance.className = '';
+    btnSortCreated.className = '';
     sort(event.target.dataset.fieldId);
   });
 
   btnSortImportance.addEventListener('click', (event) => {
+    btnSortFinished.className = '';
+    btnSortImportance.classList.add('active_button');
+    btnSortCreated.className = '';
     sort(event.target.dataset.fieldId);
   });
 
@@ -49,6 +57,7 @@ function initEventHandlers() {
   });
 
   btnShowFinished.addEventListener('click', () => {
+    btnShowFinished.classList.add('active_button');
     filter();
   });
 

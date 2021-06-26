@@ -1,6 +1,10 @@
 # ReadMe NoteApp Sandro Burkhart
-
 - the overview of Notes basically contains not completed Note-Entries
+
+## todos:
+- toggle-buttons for sort and filter
+
+
 
 # Description from the initial situation
 
