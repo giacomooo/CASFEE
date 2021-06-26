@@ -1,13 +1,23 @@
-Die Vorlage beinhaltet CSS/HTML/JS-Linter. Diese sind konfiguriert. 
+# ReadMe NoteApp Sandro Burkhart
+- the overview of Notes basically contains not completed Note-Entries
 
-changed
-Getting Started
+## todos:
+- toggle-buttons for sort and filter
+
+
+
+# Description from the initial situation
+
+Die Vorlage beinhaltet CSS/HTML/JS-Linter. Diese sind konfiguriert.
+
+changed Getting Started
+
 1. Entzippen von der Vorlage.
 2. Installieren Sie die Dependencies der Vorlage
-   - Console/Terminal: «npm install» im Root vom Projekt
+    - Console/Terminal: «npm install» im Root vom Projekt
 3. Testen Sie, ob alles richtig installiert wurde
-   - Console: «npm run all» im Root vom Projekt
-   - Erwarte Ausgabe: 1 Warnungen und «npm run all completed»
+    - Console: «npm run all» im Root vom Projekt
+    - Erwarte Ausgabe: 1 Warnungen und «npm run all completed»
 4. Woche 1
    - HTML Gerüst erstellen für die Wireframes und Beginn CSS:
       - /public/index.html
@@ -15,7 +25,7 @@ Getting Started
    - Webstorm:
       - /public/index.html "ausführen".
    - Visual Studio Code:
-      - Live Server nutzen: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer    
+       - Live Server nutzen: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 Folgende Befehle sind dann möglich
 

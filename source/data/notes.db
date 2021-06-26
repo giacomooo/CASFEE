@@ -1,11 +1,6 @@
-{"title":"Titela","description":"descriptionaaaaaaaaaaaaaaaaaaaaaaaaa","dueDate":"","createdDate":{"$$date":1624201292208},"importance":"4","done":false,"_id":"36qOCLwAm6jgDI32"}
-{"title":"azrzaz","description":" zaezazzaasfddsfdsf","dueDate":"","createdDate":{"$$date":1624395940789},"done":false,"_id":"6180J2AjbIy1j3k5"}
-{"title":"tt","description":" ff","dueDate":null,"createdDate":{"$$date":1624396598358},"done":false,"_id":"CtIavcQZwzZlwvx2"}
-{"title":"Book a Flight","description":"do it! ","dueDate":"2021-06-01","createdDate":{"$$date":1624204650770},"importance":"5","done":false,"_id":"QfvzvjXYq0dGdgP8"}
-{"title":"call wife2","description":"check weather","dueDate":"2022-11-01","createdDate":{"$$date":1624210323956},"importance":"3","done":false,"_id":"XVVRJ63Sgoo9gmRq"}
-{"id":"","title":"Titelaaaa","description":"desiwasaaa","dueDate":"2021-06-24","createdDate":{"$$date":1624214662511},"importance":"3","done":false,"_id":"b1gyyir1wcGQzZTi"}
-{"title":"new","description":"new ","dueDate":"","createdDate":{"$$date":1624388672153},"importance":"3","done":false,"_id":"j1XphjfnOuSzTwsl"}
-{"title":"check everything","description":"check check doublecheck ","dueDate":{"$$date":1625097600000},"createdDate":{"$$date":1624210230454},"importance":"2","done":false,"_id":"m0vWEkS3BZJR5tzN"}
-{"title":"Hide","description":"now you see me ","dueDate":{"$$date":1625097600000},"createdDate":{"$$date":1624390933547},"importance":"4","done":false,"_id":"m2q7EEhCZg2UAM3K"}
-{"title":"Find Nemo","description":"search the ocean ","dueDate":null,"createdDate":{"$$date":1624201417779},"importance":"1","done":false,"_id":"nR4ezIlrcb2wJigb"}
-{"id":"Book a Flight","title":"do it! ","description":"2021-06-01","dueDate":"2001-04-01","createdDate":{"$$date":1624212107983},"done":true,"_id":"oj14UcCRskqCy1Dz","importance":"5"}
+{"title":"Test","description":"Testbech ","dueDate":"2021-06-26","createdDate":{"$$date":1624698707027},"importance":"4","completionDate":"2021-06-26","done":false,"_id":"2M1kA5K9uAojpWO7"}
+{"title":"ggg","description":" ggg","dueDate":"2021-06-26","createdDate":{"$$date":1624696610804},"importance":"2","completionDate":"","done":false,"_id":"IUOZc3kMuooRsw8R"}
+{"title":"eee","description":" eee","dueDate":"2021-06-26","createdDate":{"$$date":1624696672839},"importance":"3","completionDate":"2021-06-27","done":false,"_id":"IZgowieyswTprxl2"}
+{"title":"ttt","description":" ttsdfta","dueDate":"2021-06-26","createdDate":{"$$date":1624696631906},"importance":"3","completionDate":"2021-12-31","done":false,"_id":"riuaC8DFglXVtGOQ"}
+{"title":"Test","description":"Testbech ","dueDate":"2021-06-26","createdDate":{"$$date":1624698707027},"importance":"4","completionDate":"2021-06-27","done":false,"_id":"2M1kA5K9uAojpWO7"}
+{"title":"ttt","description":" ttsdfta","dueDate":"2021-06-26","createdDate":{"$$date":1624696631906},"importance":"3","completionDate":"2021-06-26","done":false,"_id":"riuaC8DFglXVtGOQ"}

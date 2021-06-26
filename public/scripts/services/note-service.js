@@ -1,16 +1,18 @@
 import {httpService} from './http-service.js';
+import {Note} from './note.js';
 
 export default class NoteService {
   constructor() {
     this.direction = -1;
     this.isFilterSet = false;
     this.sortField = '';
-    this.notes = [];
+    this.notes = Note[{}];
   }
 
-  async loadData() {
+  async loadData(filter = false) {
     const response = await httpService.ajax('GET', '/notes', undefined);
-    this.notes = response;
+    this.notes = response.filter(n => (n.completionDate === null || n.completionDate == '') !== filter)
+                         .map(r => new Note(r._id, r.dueDate, r.title, r.importance, r.completionDate, r.description, r.createdDate));
     return response;
   }
 
@@ -57,8 +59,7 @@ export default class NoteService {
 
   async filter() {
     this.isFilterSet = !this.isFilterSet;
-    this.notes = this.isFilterSet ? this.notes.filter((n) => n.done === this.isFilterSet) :
-        await this.loadData();
+    await this.loadData(this.isFilterSet);
   }
 
   sort(field) {

@@ -39,6 +39,7 @@ function initEventHandlers() {
                .then((res) => {
                  return res;
                });
+    window.location.href = './index.html';
   });
 }
 

@@ -1,6 +1,7 @@
 import {noteService} from '../services/note-service.js';
+import {note_template} from '../templates/note-template.js';
 
-const notesTemplateCompiled = Handlebars.compile(document.getElementById('notes-list-template').innerHTML);
+const notesTemplateCompiled = Handlebars.compile(note_template);
 
 const notesContainer = document.getElementById('notes-container');
 const btnSortCreated = document.getElementById('btnSortCreated');
@@ -8,17 +9,13 @@ const btnSortFinished = document.getElementById('btnSortFinished');
 const btnSortImportance = document.getElementById('btnSortImportance');
 const btnTheme = document.getElementById('btnTheme');
 const btnShowFinished = document.getElementById('btnShowFinished');
-const btnDelete = document.getElementById('btnDelete');
+// const btnDelete = document.getElementById('btnDelete');
 
-function showNotes() {
+function refreshNotesView() {
   notesContainer.innerHTML = notesTemplateCompiled(
       {notes: noteService.notes},
       {allowProtoPropertiesByDefault: true},
   );
-}
-
-function refreshNotesView() {
-  showNotes();
 }
 
 function sort(fieldId) {
@@ -31,21 +28,26 @@ async function filter() {
   refreshNotesView();
 }
 
-
 function initEventHandlers() {
-  async function btnEditFunc(element) {
-    document.location.href = `${window.location.origin}/note.html?id=${element.dataset.noteId}`;
-  }
 
   btnSortCreated.addEventListener('click', (event) => {
+    btnSortFinished.className = '';
+    btnSortImportance.className = '';
+    btnSortCreated.classList.add('active_button');
     sort(event.target.dataset.fieldId);
   });
 
   btnSortFinished.addEventListener('click', (event) => {
+    btnSortFinished.classList.add('active_button');
+    btnSortImportance.className = '';
+    btnSortCreated.className = '';
     sort(event.target.dataset.fieldId);
   });
 
   btnSortImportance.addEventListener('click', (event) => {
+    btnSortFinished.className = '';
+    btnSortImportance.classList.add('active_button');
+    btnSortCreated.className = '';
     sort(event.target.dataset.fieldId);
   });
 
@@ -55,10 +57,14 @@ function initEventHandlers() {
   });
 
   btnShowFinished.addEventListener('click', () => {
+    btnShowFinished.classList.add('active_button');
     filter();
   });
 
-  // Buttons werden zu spät gerendert todo: delete fertigstellen
+  // async funciton btnDeleteFunc(element){
+  //   noteService.deleteNote(element.id);
+  // }
+  // // Buttons werden zu spät gerendert todo: delete fertigstellen
   // btnDelete.addEventListener('click', (e) => {
   //   console.log("ddddd", e)
   // //   const x = noteService.deleteNote(e.id);
@@ -67,11 +73,9 @@ function initEventHandlers() {
 
 async function initialize() {
   initEventHandlers();
-
   await noteService.loadData()
                    .then(() => {
                    });
-
   refreshNotesView();
 }
 
