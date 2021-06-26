@@ -9,17 +9,14 @@ const btnSortFinished = document.getElementById('btnSortFinished');
 const btnSortImportance = document.getElementById('btnSortImportance');
 const btnTheme = document.getElementById('btnTheme');
 const btnShowFinished = document.getElementById('btnShowFinished');
-const btnDelete = document.getElementById('btnDelete');
+// const btnDelete = document.getElementById('btnDelete');
 
-function showNotes() {
+function refreshNotesView() {
+  console.log('ref', noteService.notes);
   notesContainer.innerHTML = notesTemplateCompiled(
       {notes: noteService.notes},
       {allowProtoPropertiesByDefault: true},
   );
-}
-
-function refreshNotesView() {
-  showNotes();
 }
 
 function sort(fieldId) {
@@ -32,11 +29,7 @@ async function filter() {
   refreshNotesView();
 }
 
-
 function initEventHandlers() {
-  async function btnEditFunc(element) {
-    document.location.href = `${window.location.origin}/note.html?id=${element.dataset.noteId}`;
-  }
 
   btnSortCreated.addEventListener('click', (event) => {
     sort(event.target.dataset.fieldId);
@@ -59,7 +52,10 @@ function initEventHandlers() {
     filter();
   });
 
-  // Buttons werden zu spät gerendert todo: delete fertigstellen
+  // async funciton btnDeleteFunc(element){
+  //   noteService.deleteNote(element.id);
+  // }
+  // // Buttons werden zu spät gerendert todo: delete fertigstellen
   // btnDelete.addEventListener('click', (e) => {
   //   console.log("ddddd", e)
   // //   const x = noteService.deleteNote(e.id);
@@ -68,11 +64,9 @@ function initEventHandlers() {
 
 async function initialize() {
   initEventHandlers();
-
   await noteService.loadData()
                    .then(() => {
                    });
-
   refreshNotesView();
 }
 

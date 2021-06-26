@@ -5,14 +5,13 @@ import {fileURLToPath} from 'url';
 import {noteRoutes} from './routes/note.routes.js';
 import {overrideMiddleware} from './utils/method-override.js';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(overrideMiddleware);
 app.use('/notes', noteRoutes);
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(dirname(fileURLToPath(import.meta.url)), '/public')));
 
 app.use((req, res) => {
     res.setHeader('Content-Type', 'text/html');

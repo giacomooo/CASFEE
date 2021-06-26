@@ -7,6 +7,5 @@ export default class Note {
     this.createdDate = new Date();
     this.importance = importance;
     this.completionDate = new Date(completionDate);
-    this.done = false;
   }
 }
