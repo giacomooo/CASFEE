@@ -1,7 +1,8 @@
 {"title":"Titela","description":"descriptionaaaaaaaaaaaaaaaaaaaaaaaaa","dueDate":"","createdDate":{"$$date":1624201292208},"importance":"4","done":false,"_id":"36qOCLwAm6jgDI32"}
 {"title":"azrzaz","description":" zaezazzaasfddsfdsf","dueDate":"","createdDate":{"$$date":1624395940789},"done":false,"_id":"6180J2AjbIy1j3k5"}
-{"title":"tt","description":" ff","dueDate":null,"createdDate":{"$$date":1624396598358},"done":false,"_id":"CtIavcQZwzZlwvx2"}
+{"title":"tt","description":" ffs","dueDate":"","createdDate":{"$$date":1624396598358},"done":false,"_id":"CtIavcQZwzZlwvx2","importance":"3","completionDate":""}
 {"title":"Book a Flight","description":"do it! ","dueDate":"2021-06-01","createdDate":{"$$date":1624204650770},"importance":"5","done":false,"_id":"QfvzvjXYq0dGdgP8"}
+{"title":"neueneen","description":" ","dueDate":"","createdDate":{"$$date":1624569143810},"completionDate":"2021-06-24","done":false,"_id":"VcSQWrEYbpztIWGR"}
 {"title":"call wife2","description":"check weather","dueDate":"2022-11-01","createdDate":{"$$date":1624210323956},"importance":"3","done":false,"_id":"XVVRJ63Sgoo9gmRq"}
 {"id":"","title":"Titelaaaa","description":"desiwasaaa","dueDate":"2021-06-24","createdDate":{"$$date":1624214662511},"importance":"3","done":false,"_id":"b1gyyir1wcGQzZTi"}
 {"title":"new","description":"new ","dueDate":"","createdDate":{"$$date":1624388672153},"importance":"3","done":false,"_id":"j1XphjfnOuSzTwsl"}

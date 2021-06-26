@@ -1,6 +1,7 @@
 import {noteService} from '../services/note-service.js';
+import {note_template} from '../templates/note-template.js';
 
-const notesTemplateCompiled = Handlebars.compile(document.getElementById('notes-list-template').innerHTML);
+const notesTemplateCompiled = Handlebars.compile(note_template);
 
 const notesContainer = document.getElementById('notes-container');
 const btnSortCreated = document.getElementById('btnSortCreated');
