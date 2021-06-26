@@ -32,7 +32,6 @@ export class NotesController {
   }
 
   async deleteNote(req) {
-    console.log('backend', req);
     await noteStore.delete(req.body.id);
   }
 }

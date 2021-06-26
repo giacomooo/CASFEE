@@ -12,7 +12,13 @@ export default class NoteService {
   async loadData(filter = false) {
     const response = await httpService.ajax('GET', '/notes', undefined);
     this.notes = response.filter(n => (n.completionDate === null || n.completionDate == '') !== filter)
-                         .map(r => new Note(r._id, r.dueDate, r.title, r.importance, r.completionDate, r.description, r.createdDate));
+                         .map(r => new Note(r._id,
+                             r.dueDate,
+                             r.title,
+                             r.importance,
+                             r.completionDate,
+                             r.description,
+                             r.createdDate));
     return response;
   }
 
